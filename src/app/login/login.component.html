@@ -1,0 +1,196 @@
+<div class="template">
+  <div class="nav-bar">
+    <div class="title">
+      <div class="logo">
+        <img
+          src="assets/images/logo.png"
+          alt="logo"
+          class="logo"
+          width="50px"
+          height="50px"
+        />
+      </div>
+      <p>Weather App</p>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center">
+    <mat-card class="login-card" *ngIf="!signIn">
+      <mat-card-header style="justify-content: center; margin: 0 0 10px 0">
+        <mat-card-title class="card-title">Login</mat-card-title>
+      </mat-card-header>
+      <div style="display: flex; justify-content: center">
+        <mat-divider class="divider" [style.width.%]="60"></mat-divider>
+      </div>
+      <mat-card-content style="margin: 20px 0 0 0">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Enter Username"
+            [(ngModel)]="username"
+            required
+          />
+          <mat-icon matPrefix color="primary">person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            placeholder="Enter Password"
+            [(ngModel)]="password"
+            required
+          />
+          <button
+            class="no_style"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.atria-pressed]="hide"
+          >
+            <mat-icon color="primary">{{
+              hide ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+          <mat-icon matPrefix color="primary">lock</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions style="justify-content: center">
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin: 0 10px 20px 10px; width: 100%; height: 100%"
+          (click)="login()"
+        >
+          LOGIN
+        </button>
+      </mat-card-actions>
+      <mat-divider class="divider"></mat-divider>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <label style="margin: 10px 10px 10px 0">New User?</label>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="signIn = true"
+          style="margin: 15px 0 15px 0"
+        >
+          Register
+        </button>
+      </div>
+      <mat-card-footer>
+        <mat-progress-bar
+          #loginloadbar
+          mode="determinate"
+          value="0"
+        ></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card class="signin-card" *ngIf="signIn">
+      <mat-card-header style="justify-content: center; margin: 0 0 10px 0">
+        <mat-card-title class="card-title">Register</mat-card-title>
+      </mat-card-header>
+      <div style="display: flex; justify-content: center">
+        <mat-divider class="divider" [style.width.%]="60"></mat-divider>
+      </div>
+      <mat-card-content style="margin: 20px 0 0 0">
+        <div class="form-row">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Enter your Name"
+              [(ngModel)]="name"
+              required
+            />
+            <mat-icon matPrefix color="primary">perm_identity</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Enter your E-Mail Id"
+              [(ngModel)]="mailId"
+              required
+            />
+            <mat-icon matPrefix color="primary">email</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              placeholder="Enter Username"
+              [(ngModel)]="username"
+              required
+            />
+            <mat-icon matPrefix color="primary">person</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Contact No</mat-label>
+            <input
+              matInput
+              placeholder="Enter your Phone No."
+              [(ngModel)]="phoneNo"
+              required
+            />
+            <mat-icon matPrefix color="primary">phone</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="Enter Password"
+              [(ngModel)]="password"
+              required
+            />
+            <mat-icon matPrefix color="primary">lock</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Re-type Password</mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="Re-Type Password"
+              [(ngModel)]="rePassword"
+              required
+            />
+            <mat-icon matPrefix color="primary">lock_open</mat-icon>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions style="justify-content: center">
+        <button
+          mat-raised-button
+          style="margin: 0 10px 20px 10px; width: 20%; height: 100%"
+          (click)="signUp()"
+        >
+          Sign Up
+        </button>
+      </mat-card-actions>
+      <mat-divider class="divider"></mat-divider>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <label style="margin: 10px 10px 10px 0">Existing User?</label>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="signIn = false"
+          style="margin: 15px 0 15px 0"
+        >
+          Sign In
+        </button>
+      </div>
+      <mat-card-footer>
+        <mat-progress-bar
+          #loginloadbar
+          mode="determinate"
+          value="0"
+        ></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

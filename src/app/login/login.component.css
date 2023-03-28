@@ -1,0 +1,73 @@
+.nav-bar {
+    background: linear-gradient(to right, #673ab7, 50%, #ffd740);
+    background-size: cover;
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgb(194, 194, 194);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    float: right;
+    display: flex;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color);
+}
+
+.title .logo {
+    margin: 1px 0 -1px 1px;
+}
+
+.title p {
+    margin: 0 0 1px 5px;
+}
+
+.login-card {
+    min-width: 300px;
+    max-width: 400px;
+    margin: 100px 0px 0px 0px;
+}
+
+.signin-card {
+    min-width: 820px;
+    max-width: 820px;
+    margin: 100px 0px 0px 0px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.divider {
+    border-width: 2px;
+    border-color: var(--mat-primary);
+}
+
+.template {
+    background-color: #d8d8d8;
+    height: 100%;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    flex: 1;
+    margin-right: 10px;
+}
+
+button:not(.no_style) {
+    background: var(--primary-color);
+    border-radius: 20px;
+    color: #ffffff;
+}

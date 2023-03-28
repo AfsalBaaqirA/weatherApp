@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+:root {
+    --primary-color: linear-gradient(90deg, #4776e6, #8e54e9);
+    --secondary-color: #2b2b2b;
+    --tertiary-color: #f5f5f5;
+    --font-color: #f5f5f5;
+    --font-color-secondary: #2b2b2b;
+    --mat-primary: #673ab7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0 !important;
+}
+
+html,
+body {
+    height: 100%;
+}
